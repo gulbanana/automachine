@@ -1,0 +1,38 @@
+@implements IDisposable
+@inject IJSRuntime JS
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public Action<TimeSpan>? UpdateState { get; set; }
+    private IJSInProcessObjectReference? module;
+    private TimeSpan last;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            module = await JS.InvokeAsync<IJSInProcessObjectReference>("import", "./Components/RAF.razor.js");
+            module.InvokeVoid("start", DotNetObjectReference.Create(this));
+        }
+    }
+
+    public void Dispose()
+    {
+        module?.InvokeVoid("stop");
+    }
+
+    [JSInvokable]
+    public void OnFrame(double timestampMilliseconds)
+    {
+        var timestamp = TimeSpan.FromMilliseconds(timestampMilliseconds);
+        if (last != TimeSpan.Zero)
+        {
+            var diff = timestamp.Subtract(last);
+            UpdateState?.Invoke(diff);
+        }
+        last = timestamp;
+
+        StateHasChanged();
+    }
+}
+
+@ChildContent

@@ -1,15 +1,22 @@
 ﻿@page "/"
 @code {
     private readonly Machine state = new();
+
+    private void OnUpdate(TimeSpan elapsed)
+    {
+        state.Tick(elapsed);
+    }
 }
 
 <PageTitle>automachine</PageTitle>
 
-<main>
-    <div class="panel">
-        <Readout Value="@(state.P.ToString())" Color="rebeccapurple" />
-        <Readout Value="@(state.G.ToString())" Color="yellowgreen" />
-        <Pushbutton Color="rebeccapurple" @bind-Held="state.P" />
-        <Pushbutton Color="yellowgreen" @bind-Held="state.G" />
-    </div>
-</main>
+<RAF UpdateState="OnUpdate">
+    <main>
+        <div class="panel">
+            <Readout Value="@state.PText" Color="rebeccapurple" />
+            <Readout Value="@state.GText" Color="yellowgreen" />
+            <Pushbutton Color="rebeccapurple" @bind-Held="state.PHeld" />
+            <Pushbutton Color="yellowgreen" @bind-Held="state.GHeld" />
+        </div>
+    </main>
+</RAF>
