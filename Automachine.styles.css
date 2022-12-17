@@ -1,21 +1,25 @@
 /* /Components/Pushbutton.razor.rz.scp.css */
-.outercircle[b-aetp5ji2ny] {
+.button[b-aetp5ji2ny] {
     width: 100px;
     height: 100px;
     clip-path: circle(50px);
     background-color: white;
 }
 
-.outercircle:hover[b-aetp5ji2ny] {
+.button:hover[b-aetp5ji2ny], .button--pressed[b-aetp5ji2ny] {
     background-color: aqua;
 }
 
-.innercircle[b-aetp5ji2ny] {
+.button__inner[b-aetp5ji2ny] {
     margin: 5px;
     width: 90px;
     height: 90px;
     clip-path: circle(45px);
     background-color: var(--rc);
+}
+
+.button__inner--held[b-aetp5ji2ny] {
+    background-color: aqua;
 }
 /* /Components/Readout.razor.rz.scp.css */
 .outerbox[b-diy2e1v450] {
@@ -40,6 +44,7 @@
     font-weight: bold;
     font-size: 20px;
     color: var(--rc);
+    user-select: none;
 }
 /* /Pages/Index.razor.rz.scp.css */
 main[b-p6ghuesfe7] {
