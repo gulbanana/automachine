@@ -2,8 +2,8 @@
 {
     public record Resource(string Color)
     {
-        public bool Held { get; set; }
         public double Val { get; set; }
+        public bool Held { get; set; }
         public string AsLabel => Val.ToString("000");
 
         public void Hold(TimeSpan elapsed)
