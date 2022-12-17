@@ -1,16 +1,15 @@
 ﻿@page "/"
 @code {
-    private bool pHeld;
-    private bool gHeld;
+    private readonly Machine state = new();
 }
 
 <PageTitle>automachine</PageTitle>
 
 <main>
     <div class="panel">
-        <Readout Value="@(pHeld.ToString())" Color="rebeccapurple" />
-        <Readout Value="@(gHeld.ToString())" Color="yellowgreen" />
-        <Pushbutton Color="rebeccapurple" @bind-Held="pHeld" />
-        <Pushbutton Color="yellowgreen" @bind-Held="gHeld" />
+        <Readout Value="@(state.P.ToString())" Color="rebeccapurple" />
+        <Readout Value="@(state.G.ToString())" Color="yellowgreen" />
+        <Pushbutton Color="rebeccapurple" @bind-Held="state.P" />
+        <Pushbutton Color="yellowgreen" @bind-Held="state.G" />
     </div>
 </main>
