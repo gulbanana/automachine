@@ -1,7 +1,7 @@
 .button {
-    width: 100px;
-    height: 100px;
-    clip-path: circle(50px);
+    width: 160px;
+    height: 160px;
+    clip-path: circle(80px);
     background-color: white;
 }
 
@@ -11,9 +11,9 @@
 
 .button__inner {
     margin: 5px;
-    width: 90px;
-    height: 90px;
-    clip-path: circle(45px);
+    width: 150px;
+    height: 150px;
+    clip-path: circle(75px);
     background-color: var(--rc);
 }
 

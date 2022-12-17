@@ -1,24 +1,40 @@
 .outerbox {
-    width: 160px;
-    height: 30px;
-    border: 3px solid white;
+    width: 60px;
+    height: 160px;
+    border: 6px solid white;
 }
 
 .innerbox {
     width: 100%;
     height: 100%;
-    margin: -3px;
-    border: 3px solid white;
-    border-radius: 6px;
-    background-color: black;
-    display: grid;
+    margin: -6px;
+    border: 6px solid white;
+    border-radius: 12px;
 }
 
-.label {
-    align-self: center;
-    justify-self: center;
-    font-weight: bold;
-    font-size: 20px;
-    color: var(--rc);
-    user-select: none;
+.marker {
+    position: relative;
+    left: 30px;
+    height: 2px;
+    width: 30px;
+    background: white;
+}
+
+.m1 {
+    top: 34px;
+}
+
+.m2 {
+    top: 74px;
+}
+
+.m3 {
+    top: 114px;
+}
+
+.current {
+    left: 15px;
+    width: 45px;
+    background: var(--rc);
+    top: calc(152px - calc(var(--fullness) * 158px));
 }
