@@ -1,0 +1,40 @@
+name: Pages
+
+on:
+  workflow_dispatch:  
+  
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy-to-pages:    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup .NET SDK      
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '7.0.x'
+
+      - name: Publish .NET Project
+        run: dotnet publish -c Release -o artifacts --nologo
+
+      - name: Disable Jekyll mode 
+        run: touch artifacts/wwwroot/.nojekyll
+
+      - name: Emulate fallback routing
+        run: cp artifacts/wwwroot/index.html artifacts/wwwroot/404.html
+
+      - name: Rewrite base href
+        uses: SteveSandersonMS/ghaction-rewrite-base-href@v1
+        with:
+          html_path: artifacts/wwwroot/index.html
+          base_href: /${{ github.event.repository.name }}/
+        
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: gh-pages
+          folder: artifacts/wwwroot
