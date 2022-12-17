@@ -24,7 +24,7 @@
             <Readout Color="@state.Goal1.Color" Value="@state.Goal1.Val" />
             <Pushbutton Color="@state.X.Color" @bind-Held="state.X.Held" Automated="state.Phase1" />
             <Pushbutton Color="@state.Y.Color" @bind-Held="state.Y.Held" Automated="state.Phase1" />
-            <Gauge Color="@state.Goal1.Color" Min="0" Max="200" Current="@state.Goal1.Val" />
+            <Gauge Color="@state.Goal1.Color" Min="0" Max="200" Target="@(150..176)" Current="@state.Goal1.Val" />
         </div>
     </main>
 </RAF>

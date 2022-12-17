@@ -3,10 +3,12 @@
     [Parameter] public double Min { get; set; }
     [Parameter] public double Max { get; set; }
     [Parameter] public double Current { get; set; } 
+    [Parameter] public Range Target { get; set; }
 }
 
 <div class="outerbox">
     <div class="innerbox" />
+    <div class="target" style="--from: @(Math.Clamp(Target.Start.Value / Max, 0, 1)); --to: @(Math.Clamp(Target.End.Value / Max, 0, 1));" />
     @for (var i = 1; i < 8; i++)
     {
         <div class="marker" style="--pos: @(Math.Clamp(i / 8.0, 0, 1)); --rc: @Color;" />

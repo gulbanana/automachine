@@ -29,3 +29,11 @@
     height: 3px;
     background: var(--rc);
 }
+
+.target {
+    position: absolute;
+    top: calc(148px - calc(var(--to) * 148px));
+    bottom: calc(var(--from) * 148px);
+    width: 100%;
+    background: teal;
+}
