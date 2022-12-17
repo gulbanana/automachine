@@ -20,4 +20,5 @@
     font-weight: bold;
     font-size: 20px;
     color: var(--rc);
+    user-select: none;
 }

@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject GlobalEvents Global
 @code {
     private readonly Machine state = new();
 
@@ -6,12 +7,17 @@
     {
         state.Tick(elapsed);
     }
+
+    private void OnMouseUp()
+    {
+        Global.TriggerMouseUp();
+    }
 }
 
 <PageTitle>automachine</PageTitle>
 
 <RAF UpdateState="OnUpdate">
-    <main>
+    <main @onmouseup="OnMouseUp">
         <div class="panel">
             <Readout Value="@state.PText" Color="rebeccapurple" />
             <Readout Value="@state.GText" Color="yellowgreen" />

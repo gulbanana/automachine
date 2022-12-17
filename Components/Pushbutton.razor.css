@@ -1,18 +1,22 @@
-.outercircle {
+.button {
     width: 100px;
     height: 100px;
     clip-path: circle(50px);
     background-color: white;
 }
 
-.outercircle:hover {
+.button:hover, .button--pressed {
     background-color: aqua;
 }
 
-.innercircle {
+.button__inner {
     margin: 5px;
     width: 90px;
     height: 90px;
     clip-path: circle(45px);
     background-color: var(--rc);
+}
+
+.button__inner--held {
+    background-color: aqua;
 }

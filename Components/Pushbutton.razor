@@ -1,19 +1,54 @@
+@implements IDisposable
+@inject GlobalEvents Global
 @code {
-    [Parameter] public string Color { get; set; }
+    [Parameter] public string Color { get; set; } = "Magenta";
     [Parameter] public bool Held { get; set; }
     [Parameter] public EventCallback<bool> HeldChanged { get; set; }
+    private bool pressed;
 
-    private void Enter()
+    protected override void OnInitialized()
     {
+        Global.MouseUp += OnMouseUp;
+    }
+
+    public void Dispose()
+    {
+        Global.MouseUp -= OnMouseUp;
+    }
+
+    private void OnMouseDown()
+    {
+        pressed = true;
         HeldChanged.InvokeAsync(true);
     }
 
-    private void Leave()
+    private void OnMouseUp()
     {
-        HeldChanged.InvokeAsync(false);
+        if (pressed)
+        {
+            HeldChanged.InvokeAsync(false);
+            pressed = false;
+        }
+    }
+
+    private void OnMouseEnter()
+    {
+        if (pressed)
+        {
+            HeldChanged.InvokeAsync(true);
+        }
+    }
+
+    private void OnMouseLeave()
+    {
+        if (pressed)
+        {
+            HeldChanged.InvokeAsync(false);
+        }
     }
 }
 
-<div class="outercircle" style="--rc: @Color" @onmouseenter="Enter" @onmouseleave="Leave">
-    <div class="innercircle" />
+<div class="@Block("button", (pressed, "pressed"))" style="--rc: @Color" 
+     @onmousedown="OnMouseDown" @onmouseenter="OnMouseEnter" @onmouseleave="OnMouseLeave" >
+    <div class="@Element("inner", (Held, "held"))"></div>
 </div>
