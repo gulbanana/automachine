@@ -1,5 +1,19 @@
 @code {
     [Parameter] public string Color { get; set; }
+    [Parameter] public bool Held { get; set; }
+    [Parameter] public EventCallback<bool> HeldChanged { get; set; }
+
+    private void Enter()
+    {
+        HeldChanged.InvokeAsync(true);
+    }
+
+    private void Leave()
+    {
+        HeldChanged.InvokeAsync(false);
+    }
 }
 
-<div class="button" style="--rc: @Color" />
+<div class="outercircle" style="--rc: @Color" @onmouseenter="Enter" @onmouseleave="Leave">
+    <div class="innercircle" />
+</div>

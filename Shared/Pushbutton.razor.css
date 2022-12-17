@@ -1,6 +1,18 @@
-.button {
-    width: 50px;
-    height: 50px;
-    clip-path: circle(25px);
+.outercircle {
+    width: 100px;
+    height: 100px;
+    clip-path: circle(50px);
+    background-color: white;
+}
+
+.outercircle:hover {
+    background-color: aqua;
+}
+
+.innercircle {
+    margin: 5px;
+    width: 90px;
+    height: 90px;
+    clip-path: circle(45px);
     background-color: var(--rc);
 }
