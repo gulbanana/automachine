@@ -1,33 +1,49 @@
 /* /Components/Gauge.razor.rz.scp.css */
 .outerbox[b-o2df00ldgs] {
-    width: 160px;
-    height: 30px;
-    border: 3px solid white;
+    width: 60px;
+    height: 160px;
+    border: 6px solid white;
 }
 
 .innerbox[b-o2df00ldgs] {
     width: 100%;
     height: 100%;
-    margin: -3px;
-    border: 3px solid white;
-    border-radius: 6px;
-    background-color: black;
-    display: grid;
+    margin: -6px;
+    border: 6px solid white;
+    border-radius: 12px;
 }
 
-.label[b-o2df00ldgs] {
-    align-self: center;
-    justify-self: center;
-    font-weight: bold;
-    font-size: 20px;
-    color: var(--rc);
-    user-select: none;
+.marker[b-o2df00ldgs] {
+    position: relative;
+    left: 30px;
+    height: 2px;
+    width: 30px;
+    background: white;
+}
+
+.m1[b-o2df00ldgs] {
+    top: 34px;
+}
+
+.m2[b-o2df00ldgs] {
+    top: 74px;
+}
+
+.m3[b-o2df00ldgs] {
+    top: 114px;
+}
+
+.current[b-o2df00ldgs] {
+    left: 15px;
+    width: 45px;
+    background: var(--rc);
+    top: calc(152px - calc(var(--fullness) * 158px));
 }
 /* /Components/Pushbutton.razor.rz.scp.css */
 .button[b-aetp5ji2ny] {
-    width: 100px;
-    height: 100px;
-    clip-path: circle(50px);
+    width: 160px;
+    height: 160px;
+    clip-path: circle(80px);
     background-color: white;
 }
 
@@ -37,9 +53,9 @@
 
 .button__inner[b-aetp5ji2ny] {
     margin: 5px;
-    width: 90px;
-    height: 90px;
-    clip-path: circle(45px);
+    width: 150px;
+    height: 150px;
+    clip-path: circle(75px);
     background-color: var(--rc);
 }
 
@@ -48,17 +64,17 @@
 }
 /* /Components/Readout.razor.rz.scp.css */
 .outerbox[b-diy2e1v450] {
-    width: 80px;
-    height: 30px;
-    border: 3px solid white;
+    width: 160px;
+    height: 60px;
+    border: 6px solid white;
 }
 
 .innerbox[b-diy2e1v450] {
     width: 100%;
     height: 100%;
-    margin: -3px;
-    border: 3px solid white;
-    border-radius: 6px;
+    margin: -6px;
+    border: 6px solid white;
+    border-radius: 12px;
     background-color: black;
     display: grid;
 }
@@ -67,7 +83,7 @@
     align-self: center;
     justify-self: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 40px;
     color: var(--rc);
     user-select: none;
 }
@@ -85,7 +101,7 @@ main[b-p6ghuesfe7] {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto;
-    gap: 20px;
+    gap: 40px;
     align-items: center;
     justify-items: center;
 }
