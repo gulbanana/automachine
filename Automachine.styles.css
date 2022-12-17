@@ -30,6 +30,14 @@
     height: 3px;
     background: var(--rc);
 }
+
+.target[b-o2df00ldgs] {
+    position: absolute;
+    top: calc(148px - calc(var(--to) * 148px));
+    bottom: calc(var(--from) * 148px);
+    width: 100%;
+    background: teal;
+}
 /* /Components/Pushbutton.razor.rz.scp.css */
 .button[b-aetp5ji2ny] {
     width: 160px;
