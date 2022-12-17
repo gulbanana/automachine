@@ -2,12 +2,12 @@
   "cacheBootResources": true,
   "config": [ ],
   "debugBuild": false,
-  "entryAssembly": "automachine",
-  "icuDataMode": 0,
+  "entryAssembly": "Automachine",
+  "icuDataMode": 2,
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "automachine.dll": "sha256-FVWt1GjHAw6VuatszCvPfsityp4dI46mITro7jlIgPU=",
+      "Automachine.dll": "sha256-kaAyuBlgHiiVlRl64q1Hrx42Q2tE0KKtMxNioZfd5Lw=",
       "Microsoft.AspNetCore.Components.dll": "sha256-TCK6KMeI3jqdO19737gydPnyS+M8eH5s96\/CKhRlo6M=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-urtEeY4DoG8BjuRiZZA5q6CVWALvWlMdGHye5aQL73w=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-VfuhQtMrvCmEflZYOOSPlstWKSnWBKH\/9leuaVp3ChE=",
@@ -29,7 +29,7 @@
       "System.Memory.dll": "sha256-LhiI20vyUzSAGjy2\/hiMrS1kcBvV8BG2dFRk+3V68tw=",
       "System.Net.Http.dll": "sha256-mYTg2Z0lOCNNVyiBNZ+0kYKGjN\/cy56rCCMJvEkfGpo=",
       "System.Net.Primitives.dll": "sha256-4JCAtW2+TZj+9sB4EZpr7wDIF75g8WH7W36hs4G4mp4=",
-      "System.Private.CoreLib.dll": "sha256-SiJJ7zuP+0sIZNM2eOXlU1PYsK6ehgnJT53sl1pYIHE=",
+      "System.Private.CoreLib.dll": "sha256-FZEny5tbrovUABVUzwYf\/dMi0\/pLnonmtGbs5Y19Qlo=",
       "System.Private.Uri.dll": "sha256-6lR0k3G4pQCC85Yjj\/oCfxgVo4gti8oKRPttOw+YdR4=",
       "System.Runtime.dll": "sha256-d3DqXPgttz3+\/Z0wcjx0uX69ksEG6Z4spo8R4vzaoGQ=",
       "System.Runtime.InteropServices.JavaScript.dll": "sha256-u\/PnuRpQ25cPzm2qvQ6r2sFIUMlEl\/CsUks8m2riQHg=",
@@ -42,12 +42,7 @@
     "pdb": null,
     "runtime": {
       "dotnet.7.0.1.3rogqc3447.js": "sha256-jjax3FMRXzFAziWowdtJf6vipP2xXAaA5gD6VBYB6Y0=",
-      "dotnet.timezones.blat": "sha256-6Aw0ALXLw\/A0vGcC5uG5GnFafYpL\/iHHLo22LyOR+TA=",
-      "dotnet.wasm": "sha256-Oxa1EqglhbokFBgIlQ\/Lf4Btg4+I+RdxbMV39OEOUxE=",
-      "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
-      "icudt_EFIGS.dat": "sha256-l7NtS3cI+3VUoQ2XQvlzMb8x4Ow1BtnOJNLWc6bifW0=",
-      "icudt_no_CJK.dat": "sha256-SNAStZO8ryN4gEbGzRYHea+b+VMpFMMNWXKTM3Y1gH4=",
-      "icudt.dat": "sha256-DXO3tJHXDOV4qgW\/w8ooggAgZdAVpa5ZllYYAQWpYIk="
+      "dotnet.wasm": "sha256-Oxa1EqglhbokFBgIlQ\/Lf4Btg4+I+RdxbMV39OEOUxE="
     },
     "runtimeAssets": {
       "dotnet.wasm": {
