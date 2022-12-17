@@ -19,10 +19,12 @@
 <RAF UpdateState="OnUpdate">
     <main @onmouseup="OnMouseUp">
         <div class="panel">
-            <Readout Value="@state.PText" Color="rebeccapurple" />
-            <Readout Value="@state.GText" Color="yellowgreen" />
-            <Pushbutton Color="rebeccapurple" @bind-Held="state.PHeld" />
-            <Pushbutton Color="yellowgreen" @bind-Held="state.GHeld" />
+            <Readout Color="@state.X.Color" Value="@state.X.Val" />
+            <Readout Color="@state.Y.Color" Value="@state.Y.Val" />
+            <Readout Color="@state.Goal1.Color" Value="@state.Goal1.Val" />
+            <Pushbutton Color="@state.X.Color" @bind-Held="state.X.Held" />
+            <Pushbutton Color="@state.Y.Color" @bind-Held="state.Y.Held" />
+            <Gauge Color="@state.Goal1.Color" Min="0" Max="200" Current="@state.Goal1.Val" />
         </div>
     </main>
 </RAF>

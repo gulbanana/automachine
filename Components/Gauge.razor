@@ -1,0 +1,12 @@
+﻿@code {
+    [Parameter] public string Color { get; set; } = "Magenta";
+    [Parameter] public double Min { get; set; }
+    [Parameter] public double Max { get; set; }
+    [Parameter] public double Current { get; set; } 
+}
+
+<div class="outerbox" style="--rc: @Color">
+    <div class="innerbox">
+        <span class="label">@Current</span>
+    </div>
+</div>
