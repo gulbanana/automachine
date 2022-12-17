@@ -1,0 +1,10 @@
+@code {
+    [Parameter] public string Color { get; set; }
+    [Parameter] public string? Value { get; set; }
+}
+
+<div class="outerbox" style="--rc: @Color">
+    <div class="innerbox">
+        <span class="label">@Value</span>
+    </div>
+</div>
