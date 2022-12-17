@@ -2,8 +2,9 @@
 @inject GlobalEvents Global
 @code {
     [Parameter] public string Color { get; set; } = "Magenta";
-    [Parameter] public bool Held { get; set; }
+    [Parameter] public bool Held { get; set; }    
     [Parameter] public EventCallback<bool> HeldChanged { get; set; }
+    [Parameter] public bool Automated { get; set; }
     private bool pressed;
 
     protected override void OnInitialized()
@@ -18,12 +19,22 @@
 
     private void OnMouseDown()
     {
+        if (Automated)
+        {
+            return;
+        }            
+        
         pressed = true;
         HeldChanged.InvokeAsync(true);
     }
 
     private void OnMouseUp()
     {
+        if (Automated)
+        {
+            return;
+        }
+
         if (pressed)
         {
             HeldChanged.InvokeAsync(false);
@@ -33,6 +44,11 @@
 
     private void OnMouseEnter()
     {
+        if (Automated)
+        {
+            return;
+        }
+
         if (pressed)
         {
             HeldChanged.InvokeAsync(true);
@@ -41,6 +57,11 @@
 
     private void OnMouseLeave()
     {
+        if (Automated)
+        {
+            return;
+        }
+
         if (pressed)
         {
             HeldChanged.InvokeAsync(false);
@@ -48,7 +69,9 @@
     }
 }
 
-<div class="@Block("button", (pressed, "pressed"))" style="--rc: @Color" 
+<div class="@Block("button", (pressed, "pressed"), (Automated, "automated"))" style="--rc: @Color" 
      @onmousedown="OnMouseDown" @onmouseenter="OnMouseEnter" @onmouseleave="OnMouseLeave" >
-    <div class="@Element("inner", (Held, "held"))"></div>
+    <div class="@Element("inner")">
+        <div class="@Element("innermost", (Held, "held"))"></div>
+    </div>
 </div>

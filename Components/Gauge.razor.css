@@ -1,41 +1,31 @@
 .outerbox {
     width: 60px;
     height: 160px;
-    border: 6px solid white;
+    border: 5px solid teal;
     position: relative;
 }
 
 .innerbox {
     width: 60px;
     height: 160px;
-    margin: -6px;
-    border: 6px solid white;
+    margin: -5px;
+    border: 5px solid teal;
     border-radius: 12px;
 }
 
 .marker {
     position: absolute;
-    left: 24px;
+    top: calc(148px - calc(var(--pos) * 148px));
+    left: 25px;
     height: 2px;
-    width: 30px;
+    width: 25px;
     background: white;
 }
 
-.m1 {
-    top: 34px;
-}
-
-.m2 {
-    top: 74px;
-}
-
-.m3 {
-    top: 114px;
-}
-
 .current {
-    left: 12px;
-    width: 36px;
+    top: calc(146px - calc(var(--pos) * 146px));
+    left: 15px;
+    width: 35px;
+    height: 3px;
     background: var(--rc);
-    top: calc(146px - calc(var(--fullness) * 146px));
 }

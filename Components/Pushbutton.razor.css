@@ -2,11 +2,15 @@
     width: 160px;
     height: 160px;
     clip-path: circle(80px);
-    background-color: white;
+    background-color: orange;
 }
 
-.button:hover, .button--pressed {
-    background-color: aqua;
+.button--pressed, .button:not(.button--automated):hover {
+    background-color: gold;
+}
+
+.button--automated, .button--automated .button__innermost {
+    background-color: teal;
 }
 
 .button__inner {
@@ -17,6 +21,18 @@
     background-color: var(--rc);
 }
 
-.button__inner--held {
-    background-color: aqua;
+.button__innermost {
+    position: absolute;
+    margin: 25px;
+    width: 100px;
+    height: 100px;
+    clip-path: circle(50px);
+    background-color: gold;
+
+    opacity: 0;
+    transition: opacity ease-in-out 0.5s;
+}
+
+.button__innermost--held {
+    opacity: 1;
 }

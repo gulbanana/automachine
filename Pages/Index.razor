@@ -23,7 +23,7 @@
             <Readout Color="@state.Y.Color" Value="@state.Y.Val" />
             <Readout Color="@state.Goal1.Color" Value="@state.Goal1.Val" />
             <Pushbutton Color="@state.X.Color" @bind-Held="state.X.Held" />
-            <Pushbutton Color="@state.Y.Color" @bind-Held="state.Y.Held" />
+            <Pushbutton Color="@state.Y.Color" @bind-Held="state.Y.Held" Automated />
             <Gauge Color="@state.Goal1.Color" Min="0" Max="200" Current="@state.Goal1.Val" />
         </div>
     </main>
