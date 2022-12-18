@@ -38,6 +38,70 @@
     width: 100%;
     background: teal;
 }
+/* /Components/LED.razor.rz.scp.css */
+.led[b-gdhsxkzb5t] {
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.led--on[b-gdhsxkzb5t] {
+    background-color: var(--bright);
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset var(--rim) 0 -1px 9px, var(--shadow) 0 2px 12px;
+}
+
+.led--off[b-gdhsxkzb5t] {
+    background-color: var(--dark);
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset var(--rim) 0 -1px 9px;
+}
+
+.led--blink[b-gdhsxkzb5t] {
+    animation: blink-b-gdhsxkzb5t 1s infinite;
+}
+
+@keyframes blink-b-gdhsxkzb5t {
+    from { 
+        background-color: var(--bright); 
+        box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset var(--rim) 0 -1px 9px, var(--shadow) 0 2px 12px; 
+    }
+    50% { 
+        background-color: var(--dark); 
+        box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset var(--rim) 0 -1px 9px; 
+    }
+    to { 
+        background-color: var(--bright); 
+        box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset var(--rim) 0 -1px 9px, var(--shadow) 0 2px 12px; 
+    }
+}
+
+.red[b-gdhsxkzb5t] {
+    --bright: #F00;
+    --dark: #A00;
+    --shadow: #FF000080;
+    --rim: #441313;
+}
+
+.yellow[b-gdhsxkzb5t] {
+    --bright: #FF0;
+    --dark: #AA0;
+    --shadow: #FFFF0080;
+    --rim: #808002;
+}
+
+.green[b-gdhsxkzb5t] {
+    --bright: #ABFF00;
+    --dark: #72AA00;
+    --shadow: #ABFF0080;
+    --rim: #304701;
+}
+
+.blue[b-gdhsxkzb5t] {
+    --bright: #24E0FF;
+    --dark: #2496AA;
+    --shadow: #3F8CFF;
+    --rim: #006;
+}
 /* /Components/Pushbutton.razor.rz.scp.css */
 .button[b-aetp5ji2ny] {
     width: 160px;
@@ -115,8 +179,15 @@ main[b-p6ghuesfe7] {
 .panel[b-p6ghuesfe7] {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     gap: 40px;
     align-items: center;
     justify-items: center;
+}
+
+.panel>.lights[b-p6ghuesfe7] {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
 }
