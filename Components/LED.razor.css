@@ -1,0 +1,63 @@
+.led {
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.led--on {
+    background-color: var(--bright);
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset var(--rim) 0 -1px 9px, var(--shadow) 0 2px 12px;
+}
+
+.led--off {
+    background-color: var(--dark);
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset var(--rim) 0 -1px 9px;
+}
+
+.led--blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    from { 
+        background-color: var(--bright); 
+        box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset var(--rim) 0 -1px 9px, var(--shadow) 0 2px 12px; 
+    }
+    50% { 
+        background-color: var(--dark); 
+        box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset var(--rim) 0 -1px 9px; 
+    }
+    to { 
+        background-color: var(--bright); 
+        box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset var(--rim) 0 -1px 9px, var(--shadow) 0 2px 12px; 
+    }
+}
+
+.red {
+    --bright: #F00;
+    --dark: #A00;
+    --shadow: #FF000080;
+    --rim: #441313;
+}
+
+.yellow {
+    --bright: #FF0;
+    --dark: #AA0;
+    --shadow: #FFFF0080;
+    --rim: #808002;
+}
+
+.green {
+    --bright: #ABFF00;
+    --dark: #72AA00;
+    --shadow: #ABFF0080;
+    --rim: #304701;
+}
+
+.blue {
+    --bright: #24E0FF;
+    --dark: #2496AA;
+    --shadow: #3F8CFF;
+    --rim: #006;
+}

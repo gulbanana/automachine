@@ -1,0 +1,6 @@
+@code {
+    [Parameter] public string Color { get; set; } = "green";
+    [Parameter] public LEDMode Mode { get; set; }
+}
+
+<div class="@Color @Block("led", Mode)" />

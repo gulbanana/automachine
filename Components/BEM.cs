@@ -4,9 +4,15 @@ namespace Automachine.Components;
 
 static class BEM
 {
+    public record struct Modifier(bool Test, string ExtraClass)
+    {
+        public static implicit operator Modifier((bool test, string extraClass) tuple) => new(tuple.test, tuple.extraClass);
+        public static implicit operator Modifier(Enum mode) => new(true, mode.ToString().ToLowerInvariant());
+    }
+
     private static string lastBlock = "";
 
-    public static string Block(string baseClass, params (bool test, string extraClass)[] modifiers)
+    public static string Block(string baseClass, params Modifier[] modifiers)
     {
         lastBlock = baseClass;
 
@@ -16,12 +22,12 @@ static class BEM
 
         foreach (var modifier in modifiers)
         {
-            if (modifier.test)
+            if (modifier.Test)
             {
                 classList.Append(' ');
                 classList.Append(baseClass);
                 classList.Append("--");
-                classList.Append(modifier.extraClass);
+                classList.Append(modifier.ExtraClass);
             }
         }
 
